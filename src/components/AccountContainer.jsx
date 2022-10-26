@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import AccountModal from './AccountModal';
 import { useSelector, useDispatch } from 'react-redux';
 import { openAccountModal } from '../features/Modal/modalSlice';
+import { closeAccountModal } from '../features/Modal/modalSlice';
+import RecordModal from './RecordModal';
 
 const Wrapper = styled.section`
     background-color: #4b5d67;
@@ -64,7 +66,8 @@ const DottedButton = styled.button`
 const AccountContainer = () => {
     const dispatch = useDispatch();
     const myModalState = useSelector(state => state.accountModal.modalState);
-    const createdAccounts = useSelector(state => state.addAccount.allAccounts)
+    const createdAccounts = useSelector(state => state.addAccount.allAccounts);
+    const recordModalState = useSelector(state => state.recordModal.recordModalState)
   return (
     <Wrapper>
         <DottedButton
@@ -88,6 +91,8 @@ const AccountContainer = () => {
             }
         </AllAccounts>
     { myModalState && <AccountModal/>}
+    { recordModalState && <RecordModal/>}
+    {}
     </Wrapper>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components'
 import { openAccountModal } from '../features/Modal/modalSlice';
+import { openRecordModal } from '../features/Modal/recordModalSlice';
 
 const Wrapper = styled.nav`
     display: flex;
@@ -71,7 +72,9 @@ const Navbar = () => {
             >
                 Add Account
             </Button>
-            <Button>Add Record</Button>
+            <Button onClick={() => (createdAccounts.length === 0 ) ? alert("Create an Account to add records") : dispatch(openRecordModal()) }>
+                Add Record
+            </Button>
         </ButtonContainer>
     </Wrapper>
   )

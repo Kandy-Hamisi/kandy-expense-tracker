@@ -11,7 +11,6 @@ const addAccountSlice = createSlice({
     reducers: {
         addNewAccount: (state, action) => {
             state.allAccounts =  [...state.allAccounts, action.payload]
-                // : alert("Upgrade to premium to track Multiple Accounts");
         },
     },
 });
