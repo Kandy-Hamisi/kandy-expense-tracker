@@ -1,38 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React from 'react'
+import AccountContainer from './components/AccountContainer'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 import styled from 'styled-components'
-import './App.css'
+// import VisualsContainer from './components/VisualsContainer'
 
-const Vite = styled.h1`
-  text-decoration: underline;
+const MainWrapper = styled.main`
+  width: calc(100% - 18%);
+  /* position: relative; */
+  margin-left: 18%;
+  margin-top: 7rem;
 `;
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <Vite>Vite + React</Vite>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      <Navbar/>
+      <Sidebar/>
+      <MainWrapper>
+        <AccountContainer/>
+        {/* <VisualsContainer/> */}
+      </MainWrapper>
+    </>
   )
 }
 
